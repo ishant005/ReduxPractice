@@ -13,3 +13,18 @@ export const decNumber=()=>{
     }
    
 }
+// export const logIn=()=>{
+//      return{
+//         type:"LogIn"
+//      }
+// }
+// export const logOut=()=>{
+//     return{
+//        type:"LogOut"
+//     }
+// }
+export const TOGGLE_AUTH=()=>{
+    return{
+       type:"TOGGLE_AUTH"
+    }
+}

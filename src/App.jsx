@@ -6,14 +6,21 @@ import './App.css'
 // import { Shop } from './Shop';
 import React from 'react';
 import { useSelector,useDispatch } from 'react-redux';
-import { incNumber,decNumber } from './actions/index';
+import { incNumber,decNumber,TOGGLE_AUTH } from './actions/index';
 function App() {
   
 const myState=useSelector((state)=>state.changeTheNumber);
+const myLogin=useSelector((state)=>state.ToggleButton);
 const dispatch=useDispatch();
   return (
     <div className='container'>
-            <h1>Deposit/withdraw</h1>
+          <div class="loginbtn">
+          <h1>Deposit/withdraw</h1>
+            <button onClick={() => dispatch(TOGGLE_AUTH())}>
+               {myLogin.isAuthenticated ? 'Logout' : 'Login'}
+             </button>
+          </div>
+            
            <div className='quantity'>
 <a 
 className='quantity_minus' 
@@ -32,7 +39,9 @@ title="Decrement"
  <span>+</span></a>
         
              </div>   
+            
         </div>
+      
   )
 }
 
